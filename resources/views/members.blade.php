@@ -9,7 +9,7 @@
         class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         type="search" placeholder="Search..." />
     </div>
-    <div class="bg-white p-6 rounded-lg mt-6">
+    <div class="bg-white p-6 rounded-lg mt-6" id="memberNames">
       @if ($members->count())
       @foreach ($members as $member)
       <div class="mb-7">
@@ -34,14 +34,16 @@
   $(document).ready(function(){
     $('#search').on('keyup', function(){
       let value = $(this).val();
-      console.log(value);
 
-      // $.ajax({
-      //   type: 'method',
-      //   url: "url",
-      //   data: "data",
+      $.ajax({
+        type: 'GET',
+        url: "/",
+        data: {'search': value},
+        success: function(data){
+          $('#memberNames').html(data);
+        }
 
-      // });
+      });
 
 
     });
