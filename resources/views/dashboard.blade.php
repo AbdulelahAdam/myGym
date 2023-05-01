@@ -21,27 +21,19 @@
 <body class="bg-neutral-900">
 
   <nav class="p-6 bg-amber-400 flex justify-between mb-6">
-    <ul class="flex items-center">
 
-      <li>
-        <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
-      </li>
-
-
-    </ul>
-
-    <span class="justify-center font-bold text-2xl">My Gym</span>
+    <a href="{{ route('dashboard') }}"><span class="font-bold text-2xl">MyGym</span></a>
 
     <ul class="flex items-center">
 
 
       @auth
       <li>
-        <a href="{{ route('register') }}" class="p-3">Register Member</a>
+        <a href="{{ route('register') }}" class="p-3 font-bold">Register Member</a>
       </li>
 
       <li>
-        <form action="{{ route('logout') }}" method="POST" class="p-3 inline">
+        <form action="{{ route('logout') }}" method="POST" class="p-3 inline font-bold">
           @csrf
           <button type="submit">Logout</button>
         </form>
