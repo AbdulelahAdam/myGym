@@ -13,6 +13,7 @@
       @if ($members->count())
       @foreach ($members as $member)
       <div class="mb-7">
+        <img src="" alt="gymMember">
         <p class="text-white-500 font-bold text-2xl">{{ $member->name }}</p>
         <p class="text-white-500">{{ $member->phone_number }}</p>
         <p class="text-white-500">{{ $member->email }}</p>
