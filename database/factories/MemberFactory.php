@@ -19,6 +19,7 @@ class MemberFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'phone_number' => $this->faker->numerify('###-###-####'),
+            'profile_picture_src' => $this->faker->image('public/images',400,300, null, false) 
         ];
     }
 }
