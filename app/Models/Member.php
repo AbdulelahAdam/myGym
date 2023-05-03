@@ -20,7 +20,10 @@ class Member extends Model
         'name',
         'email',
         'phone_number',
-        'profile_picture_src',
+        'membership_period',
+        'membership_from',
+        'membership_to',
+        
     ];
 
     /**
