@@ -1,0 +1,1 @@
+{{ dd($member->name)}}
