@@ -23,10 +23,14 @@ class DashboardController extends Controller
                 foreach ($members as $member) {
 
                     $output .= '<div class="mb-7">
-                                <p class="text-white-500 font-bold text-2xl">' . $member->name . '</p>
-                                <p class="text-white-500">' . $member->phone_number . '</p>
-                                <hr>
-                            </div>';
+                    <p class="text-white-500 font-bold text-2xl">'. $member->name .'</p>
+                    <p class="text-white-500 font-bold text-sm">Phone Number: '. $member->phone_number .'</p>
+                    <p class="text-white-500 font-bold text-sm">Membership Period: '. $member->membership_period .'</p> 
+                    <p class="font-bold text-sm">Expires in: <span class="text-red-500 font-bold text-sm">'. $member->membership_to .'</span></p> 
+                    
+                    
+                    <hr>
+                  </div>';
                 }
                 if($output)
                     return response()->json($output);
