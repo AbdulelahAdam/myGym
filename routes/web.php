@@ -23,6 +23,9 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/members/{member:name}', [MemberController::class, 'index'])->name('profiles.member');
 
+Route::get('/members/{member:name}/extend', [MemberController::class, 'extend'])->name('profiles.extend');
+Route::post('/members/{member:name}/extend', [MemberController::class, 'store']);
+
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
