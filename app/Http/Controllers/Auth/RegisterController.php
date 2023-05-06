@@ -7,6 +7,8 @@ use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use PhpParser\Node\Scalar\String_;
+use Psy\Util\Str;
 
 
 class RegisterController extends Controller
@@ -21,7 +23,8 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|min:8|max:15',
-            'membership' => 'required'
+            'membership' => 'required',
+            'memberDays' => 'min:1|max:20',
         ]);
 
         //dd($request);
@@ -41,6 +44,12 @@ class RegisterController extends Controller
 
             case "1 Year":
                 $membershipPeriod = Carbon::now()->addYear();
+                break;
+
+            case "inputDays":
+                $membershipPeriod = Carbon::now()->addDays($request->memberDays);
+               
+                $request->membership = ($request->memberDays . " Days");
                 break;
         }
 
