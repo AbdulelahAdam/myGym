@@ -22,18 +22,17 @@
           @endif
 
           <div class="mt-2">
-            <a href="{{ route('profiles.extend', $member) }}">
-            <button class="bg-green-500 text-white px-4 py-2 rounded font-medium mr-2">Extend
-              Membership</button>
-            </a>
             @if (Carbon\Carbon::parse($member->membership_to)->isPast())
-            <button class="hidden bg-red-500 text-white px-4 py-2 rounded font-medium ml-2">Cancel
-              Membership</button>
+              <a href="{{ route('profiles.renew', $member) }}">
+                <button class="bg-green-500 text-white px-4 py-2 rounded font-medium mr-2">Renew
+                  Membership</button>
+              </a>
 
             @else
-
-            <button class="bg-red-500 text-white px-4 py-2 rounded font-medium ml-2">Cancel
-              Membership</button>
+              <a href="{{ route('profiles.renew', $member) }}">
+                <button class="bg-red-500 text-white px-4 py-2 rounded font-medium ml-2">Cancel
+                  Membership</button>
+              </a>
 
             @endif
           </div>

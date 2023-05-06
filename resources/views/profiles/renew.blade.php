@@ -45,10 +45,10 @@
 
 <div class="flex justify-center">
   <div class="w-4/12 bg-white p-6 rounded-lg mt-6">
-    <form action="{{route('profiles.extend', $member)}}" method="POST" class="p-3">
+    <form action="{{route('profiles.renew', $member)}}" method="POST" class="p-3">
       @csrf
       <div class="mb-4">
-        <span class="flex justify-center font-bold text-lg mb-4 text-red-500 ">Extending {{ $member->name }}'s membership</span>
+        <span class="flex justify-center font-bold text-lg mb-4 text-red-500 ">Renewing {{ $member->name }}'s membership</span>
         <label for="membership" class="sr-only">Membership</label>
 
         <select name="membership" id="membership" name='membership'
@@ -90,7 +90,7 @@
       </div>
 
       <div>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Extend
+        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Renew
           Membership</button>
       </div>
 

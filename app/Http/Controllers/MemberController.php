@@ -16,9 +16,9 @@ class MemberController extends Controller
     );
     }
 
-    public function extend(Member $member){
+    public function renew(Member $member){
         
-        return view('profiles.extend',[
+        return view('profiles.renew',[
             'member' => $member,
         ]
     );
@@ -26,6 +26,7 @@ class MemberController extends Controller
 
     
     public function store(Request $request, Member $member){
+
         $this->validate($request, [
             'membership' => 'required',
             'memberDays' => 'min:1|max:20',
