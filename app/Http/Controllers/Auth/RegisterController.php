@@ -49,7 +49,7 @@ class RegisterController extends Controller
             case "inputDays":
                 $membershipPeriod = Carbon::now()->addDays($request->memberDays);
                
-                $request->membership = ($request->memberDays . " Days");
+                $request->membership = ($request->memberDays . " Day(s)");
                 break;
         }
 
