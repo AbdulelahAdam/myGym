@@ -44,7 +44,7 @@
       @guest
 
       <li>
-        <a href="{{ route('login') }}" class="p-3">Login</a>
+        <a href="{{ route('login') }}" class="p-3 font-bold">Login</a>
       </li>
 
       @endguest
