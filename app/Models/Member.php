@@ -23,7 +23,7 @@ class Member extends Model
         'membership_period',
         'membership_from',
         'membership_to',
-        
+        'membership_status',        
     ];
 
     /**

@@ -26,6 +26,9 @@ Route::get('/members/{member:name}', [MemberController::class, 'index'])->name('
 Route::get('/members/{member:name}/renew', [MemberController::class, 'renew'])->name('profiles.renew');
 Route::post('/members/{member:name}/renew', [MemberController::class, 'store']);
 
+Route::get('/members/{member:name}/cancel', [MemberController::class, 'cancel'])->name('profiles.cancel');
+Route::post('/members/{member:name}/cancel', [MemberController::class, 'remove']);
+
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);

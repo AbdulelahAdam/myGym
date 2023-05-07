@@ -14,12 +14,16 @@
       @foreach ($members as $member)
       <div class="mb-7">
         <a href="{{ route('profiles.member', $member) }}">
-          <p class="text-white-500 font-bold text-2xl">{{ $member->name }}</p>
+          <p class="text-white-500 font-bold text-2xl inline">{{ $member->name }}</p>
         </a>
         <p class="text-white-500 font-bold text-sm">Phone Number: {{ $member->phone_number }}</p>
         <p class="text-white-500 font-bold text-sm">Membership Period: {{ $member->membership_period }}</p> 
-        @if (Carbon\Carbon::parse($member->membership_to)->isPast())
+        @if($member->membership_status == "Cancelled")
+          <p class="font-bold text-sm">Expires in: <span class="text-red-600 font-bold text-sm">Cancelled!!</span></p>
+
+        @elseif (Carbon\Carbon::parse($member->membership_to)->isPast())
           <p class="font-bold text-sm">Expires in: <span class="text-red-600 font-bold text-sm">Expired!!</span></p>
+
         @else
           <p class="font-bold text-sm">Expires in: <span class="text-green-600 font-bold text-sm">{{
             Carbon\Carbon::parse($member->membership_to)->diffForHumans() }}</span></p>          

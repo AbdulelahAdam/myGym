@@ -24,6 +24,14 @@ class MemberController extends Controller
     );
     }
 
+    public function cancel(Member $member){
+        
+        return view('profiles.cancel',[
+            'member' => $member,
+        ]
+    );
+    }
+
     
     public function store(Request $request, Member $member){
 
@@ -60,11 +68,22 @@ class MemberController extends Controller
         $member->update([
             'membership_period' => $request->membership,
             'membership_from' => Carbon::now(),
-            'membership_to' => $membershipPeriod
+            'membership_to' => $membershipPeriod,
+            'membership_status' => null,
         ]);
 
 
         return redirect()->route('dashboard');
         
+    }
+
+
+    public function remove(Request $request, Member $member){
+        
+        $member->update([
+            'membership_status' => "Cancelled",
+        ]);
+
+        return redirect()->route('dashboard');
     }
 }
