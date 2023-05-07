@@ -107,7 +107,7 @@
         <div id="membershipDays">
           <label for="memberDays" class="sr-only">Days of Membership </label>
           <input class="bg-gray-100 border-2 w-mid mb-2 p-4 rounded-lg flex justify-center" type="number" name="memberDays" id="memberDays" min="1" max="20" placeholder="Days .."  @error('member_days') border-red-500 @enderror />
-          <span class="text-red-500 text-sm">A single day of membership is worth 4EGP</span>
+          <span class="text-red-500 text-sm">A single day of membership is worth 4 EGP</span>
         </div>
 
         @error('membership')
