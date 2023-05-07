@@ -28,8 +28,7 @@ class MemberController extends Controller
     public function store(Request $request, Member $member){
 
         $this->validate($request, [
-            'membership' => 'required',
-            'memberDays' => 'min:1|max:20',
+            'membership' => 'required'
         ]);
         
         $membershipPeriod = null;

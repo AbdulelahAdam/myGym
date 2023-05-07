@@ -24,10 +24,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'required|min:8|max:15',
             'membership' => 'required',
-            'memberDays' => 'min:1|max:20',
         ]);
-
-        //dd($request);
 
         switch($request->membership){
             case "1 Month":

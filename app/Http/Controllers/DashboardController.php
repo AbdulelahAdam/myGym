@@ -26,7 +26,7 @@ class DashboardController extends Controller
                     if (Carbon::parse($member->membership_to)->isPast())
                         $parsedDate = '<p class="font-bold text-sm">Expires in: <span class="text-red-500 font-bold text-sm">Expired!!</span></p><hr></div>';
                     else
-                        $parsedDate = '<p class="font-bold text-sm">Expires in: <span class="text-red-500 font-bold text-sm">'.Carbon::parse($member->membership_to)->diffForHumans().'</span></p><hr></div>';
+                        $parsedDate = '<p class="font-bold text-sm">Expires in: <span class="text-green-500 font-bold text-sm">'.Carbon::parse($member->membership_to)->diffForHumans().'</span></p><hr></div>';
 
                     $output .= '<div class="mb-7">
                     <a href="members/'. $member->name .'">
