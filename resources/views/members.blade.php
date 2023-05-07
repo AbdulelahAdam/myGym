@@ -19,13 +19,13 @@
         <p class="text-white-500 font-bold text-sm">Phone Number: {{ $member->phone_number }}</p>
         <p class="text-white-500 font-bold text-sm">Membership Period: {{ $member->membership_period }}</p> 
         @if($member->membership_status == "Cancelled")
-          <p class="font-bold text-sm">Expires in: <span class="text-red-600 font-bold text-sm">Cancelled!!</span></p>
+          <p class="font-bold text-sm">Status: <span class="text-red-600 font-bold text-sm">Cancelled!!</span></p>
 
         @elseif (Carbon\Carbon::parse($member->membership_to)->isPast())
-          <p class="font-bold text-sm">Expires in: <span class="text-red-600 font-bold text-sm">Expired!!</span></p>
+          <p class="font-bold text-sm">Status: <span class="text-red-600 font-bold text-sm">Expired!!</span></p>
 
         @else
-          <p class="font-bold text-sm">Expires in: <span class="text-green-600 font-bold text-sm">{{
+          <p class="font-bold text-sm">Status: <span class="text-green-600 font-bold text-sm">Expires in {{
             Carbon\Carbon::parse($member->membership_to)->diffForHumans() }}</span></p>          
         @endif
         
