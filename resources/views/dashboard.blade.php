@@ -35,7 +35,7 @@
       <li>
         <form action="{{ route('logout') }}" method="POST" class="p-3 inline font-bold">
           @csrf
-          <button type="submit">Logout</button>
+          <button type="submit" onclick="return confirm('Are you sure?')">Logout</button>
         </form>
       </li>
 
