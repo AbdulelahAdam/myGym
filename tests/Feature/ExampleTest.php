@@ -20,7 +20,7 @@ class ExampleTest extends TestCase
             // If redirected, attempt login with admin credentials
             $response = $this->post('http://mygym.test/login', [
                 'email' => 'boss@admin.com',
-                'password' => '123',
+                'password' => 123,
             ]);
 
             // Assert that login was successful (replace 200 with actual success status code)
