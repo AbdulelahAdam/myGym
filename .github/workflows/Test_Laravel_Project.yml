@@ -28,8 +28,15 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
+    - name: Set up environment variables for authentication
+      env:
+        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      run: echo "Setting up authentication environment variables"
+    - name: Execute tests (Unit and Feature tests) via PHPUnit with authentication
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
+        EMAIL: ${{ secrets.MY_GYM_ADMIN_EMAIL }}
+        PASSWORD: ${{ secrets.MY_GYM_ADMIN_PASSWORD }}
       run: vendor/bin/phpunit
