@@ -19,8 +19,8 @@ class ExampleTest extends TestCase
         if ($response->getStatusCode() === 302) {
             // If redirected, attempt login with admin credentials
             $response = $this->post('http://mygym.test/login', [
-                'email' => env('MY_GYM_ADMIN_EMAIL'),
-                'password' => env('MY_GYM_ADMIN_PASSWORD'),
+                'email' => 'boss@admin.com',
+                'password' => '123',
             ]);
 
             // Assert that login was successful (replace 200 with actual success status code)
