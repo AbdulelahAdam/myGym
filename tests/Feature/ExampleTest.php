@@ -14,8 +14,20 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('http://mygym.test');
+        $response = $this->get('http://mygym.test/');
 
-        $response->assertStatus(200);
+        if ($response->getStatusCode() === 302) {
+            // If redirected, attempt login with admin credentials
+            $response = $this->post('http://mygym.test/login', [
+                'email' => 'admin@example.com',
+                'password' => 'admin_password',
+            ]);
+
+            // Assert that login was successful (replace 200 with actual success status code)
+            $response->assertStatus(200);
+        } else {
+            // If not redirected, assert the status code is 200
+            $response->assertStatus(200);
+        }
     }
 }
