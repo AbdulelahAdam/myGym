@@ -38,7 +38,6 @@
           <button type="submit" onclick="return confirm('Are you sure?')">Logout</button>
         </form>
       </li>
-
       @endauth
 
       @guest
