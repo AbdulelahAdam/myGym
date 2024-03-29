@@ -37,6 +37,6 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-        EMAIL: ${{ secrets.MY_GYM_ADMIN_EMAIL }}
-        PASSWORD: ${{ secrets.MY_GYM_ADMIN_PASSWORD }}
+        email: ${{ secrets.MY_GYM_ADMIN_EMAIL }}
+        password: ${{ secrets.MY_GYM_ADMIN_PASSWORD }}
       run: vendor/bin/phpunit
