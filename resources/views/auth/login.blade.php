@@ -28,7 +28,7 @@
 
       <div class="mb-4">
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" id="email" placeholder="Password"
+        <input type="password" name="password" id="password" placeholder="Password"
           class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror" value="">
 
           @error('password')
