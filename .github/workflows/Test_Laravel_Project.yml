@@ -38,8 +38,7 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     - name: Create Database
       run: |
-        mkdir -p database
-        touch database/database.sqlite
+        mysql -e "CREATE DATABASE IF NOT EXISTS ${{ secrets.DB_DATABASE }};"
     - name: Migrate and seed database
       run: php artisan migrate --seed --force
     - name: Execute tests
